@@ -35,6 +35,22 @@ vim.g.loaded_matchit = 0
 vim.g.loaded_matchparen = 0
 vim.g.loaded_spec = 0
 
+-- ZZH Add Begin
+vim.cmd('set iskeyword+=-') -- treat dash separated words as a word text object"
+vim.cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
+vim.cmd('set inccommand=split') -- Make substitution work in realtime
+vim.cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
+vim.o.pumheight = 10 -- Makes popup menu smaller
+vim.o.fileencoding = "utf-8" -- The encoding written to file
+vim.o.backup = false -- This is recommended by coc
+vim.o.writebackup = false -- This is recommended by coc
+vim.cmd('filetype plugin on') -- filetype detection
+vim.cmd('set noswapfile') 
+vim.o.hidden = true --  don't let changed buffer disturb
+vim.o.showtabline = 2 
+vim.o.foldmethod='marker'
+-- ZZH Add End
+
 local M = {}
 
 function M.is_buffer_empty()

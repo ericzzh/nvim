@@ -41,7 +41,7 @@ fg("IndentBlanklineChar", line)
 
 -- misc --
 fg("LineNr", grey)
-fg("Comment", grey)
+fg("Comment", light_grey) -- ZZH Change
 fg("NvimInternalError", red)
 fg("VertSplit", line)
 fg("EndOfBuffer", black)

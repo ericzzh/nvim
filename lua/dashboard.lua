@@ -3,25 +3,27 @@ local M = {}
 M.config = function()
     local g = vim.g
 
-    g.dashboard_disable_at_vimenter = 1 -- dashboard is disabled by default
+    g.dashboard_disable_at_vimenter = 1 -- dashboard is disabled by default ZZH change
     g.dashboard_disable_statusline = 1
     g.dashboard_default_executive = "telescope"
     g.dashboard_custom_header = {
-        "                                   ",
-        "                                   ",
-        "                                   ",
-        "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆         ",
-        "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
-        "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
-        "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
-        "          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
-        "   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
-        "  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
-        " ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
-        " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
-        "    ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆       ",
-        "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
-        "                                   "
+    "",
+    "",
+    "",
+    "",
+    [[  .========.        .========. ]],
+    [[ // I .'..' \      // VI.'.,".\]],
+    [[ || II .'..'|      || VII..'..|]],
+    [[ || III .'."|      || VIII,'.'|]],
+    [[ || IV ,','.|      || IX.'".'.|]],
+    [[ || V '..'.'|      || X .'..',|]],
+    [[ .\_________/      .\_________/]],
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
     }
 
     g.dashboard_custom_section = {
@@ -35,7 +37,8 @@ M.config = function()
 
     g.dashboard_custom_footer = {
         "   ",
-        "NvChad v0.5"
+        -- "NvChad v0.5"
+        "ZZH"
     }
 end
 

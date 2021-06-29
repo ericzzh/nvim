@@ -12,7 +12,7 @@ M.config = function()
                 "--column",
                 "--smart-case"
             },
-            prompt_position = "top",
+            -- prompt_position = "top", ZZH Del
             prompt_prefix = "   ",
             selection_caret = "  ",
             entry_prefix = "  ",

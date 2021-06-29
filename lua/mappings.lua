@@ -40,7 +40,7 @@ map("n", "<C-s>", ":w <CR>", opt)
 map("n", "<leader>/", ":CommentToggle<CR>", opt)
 map("v", "<leader>/", ":CommentToggle<CR>", opt)
 
-map("n", "<C-q>", ":bp<bar>sp<bar>bn<bar>bd! <CR>", opt)
+-- map("n", "<C-q>", ":bp<bar>sp<bar>bn<bar>bd! <CR>", opt) ZZH Move the <S-x>
 
 -- compe stuff
 
@@ -95,7 +95,8 @@ map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 map("i", "<CR>", "v:lua.completions()", {expr = true})
 
 -- nvimtree
-map("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
+-- map("n", "<C-n>", ":NvimTreeToggle<CR>", opt) --ZZH DEL
+map("n", "<Leader>nt", ":NvimTreeToggle<CR>", opt) --ZZH ADD
 
 -- format code
 map("n", "<Leader>fm", [[<Cmd> Neoformat<CR>]], opt)
@@ -119,8 +120,24 @@ map("n", "<Leader>fo", [[<Cmd>Telescope oldfiles<CR>]], opt)
 
 -- bufferline tab stuff
 map("n", "<S-t>", ":tabnew<CR>", opt) -- new tab
-map("n", "<S-x>", ":bd!<CR>", opt) -- close tab
-
+-- map("n", "<S-x>", ":bd!<CR>", opt) -- close tab
+map("n", "<S-x>", ":bp<bar>sp<bar>bn<bar>bd! <CR>", opt) -- ZZH Add 
 -- move between tabs
 map("n", "<TAB>", [[<Cmd>BufferLineCycleNext<CR>]], opt)
 map("n", "<S-TAB>", [[<Cmd>BufferLineCyclePrev<CR>]], opt)
+
+-- ZZH Add begin
+-- better window movement
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {silent = true})
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
+
+-- resize with arrows
+-- **** Must set the Option key as Meta key in the xterm preference
+-- **** Or use iterm2
+vim.api.nvim_set_keymap('n', '<M-UP>', ':resize -2<CR>', {silent = true})
+vim.api.nvim_set_keymap('n', '<M-DOWN>', ':resize +2<CR>', {silent = true})
+vim.api.nvim_set_keymap('n', '<M-LEFT>', ':vertical resize -2<CR>', {silent = true})
+vim.api.nvim_set_keymap('n', '<M-RIGHT>', ':vertical resize +2<CR>', {silent = true})
+-- ZZh Add end
