@@ -141,7 +141,7 @@ return packer.startup(
                 "SessionLoad",
                 "SessionSave"
             },
-            startup = function()
+            setup = function()
                 require("dashboard").config()
             end
         }
