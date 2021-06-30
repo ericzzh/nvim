@@ -19,10 +19,15 @@ map("v", "x", [=[ "_x ]=], opt)
 --
 
 -- OPEN TERMINALS --
-map("n", "<C-l>", [[<Cmd>vnew term://bash <CR>]], opt) -- term over right
-map("n", "<C-x>", [[<Cmd> split term://bash | resize 10 <CR>]], opt) --  term bottom
-map("n", "<C-t>t", [[<Cmd> tabnew | term <CR>]], opt) -- term newtab
+-- ZZH Change begin
+-- map("n", "<C-l>", [[<Cmd>vnew term://bash <CR>]], opt) -- term over right
+-- map("n", "<C-x>", [[<Cmd> split term://bash | resize 10 <CR>]], opt) --  term bottom
+-- map("n", "<C-t>t", [[<Cmd> tabnew | term <CR>]], opt) -- term newtab
 
+map("n", "<M-l>", [[<Cmd>vnew term://bash <CR>]], opt) -- term over right
+map("n", "<M-x>", [[<Cmd> split term://bash | resize 10 <CR>]], opt) --  term bottom
+map("n", "<M-t>t", [[<Cmd> tabnew | term <CR>]], opt) -- term newtab
+-- ZZH Change end
 -- copy whole file content
 map("n", "<C-a>", [[ <Cmd> %y+<CR>]], opt)
 
