@@ -177,11 +177,33 @@ return packer.startup(
 
         use {
             "lukas-reineke/indent-blankline.nvim",
-            branch = "lua",
+            -- branch = "lua",
             event = "BufRead",
             setup = function()
                 require("misc-utils").blankline()
             end
+        }
+
+        -- ZZH ADD Begin
+        -- Debugging
+        use {
+          "mfussenegger/nvim-dap",
+          config=function()
+            require"dap_setting"
+          end
+        }
+
+        use {
+          "Pocco81/DAPInstall.nvim",
+          config=function()
+              local dap_install = require("dap-install")
+
+              dap_install.setup({
+      	         installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
+                 verbosely_call_debuggers = false,
+              })
+          end
+        -- ZZH ADD End
         }
     end,
     {
