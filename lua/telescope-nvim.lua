@@ -20,7 +20,10 @@ M.config = function()
             selection_strategy = "reset",
             sorting_strategy = "descending",
             layout_strategy = "horizontal",
-            layout_defaults = {
+            -- ZZH CHG Begin
+            -- layout_defaults = {
+            layout_config = {
+            -- ZZH CHG End
                 horizontal = {
                     mirror = false,
                     preview_width = 0.55
@@ -34,10 +37,12 @@ M.config = function()
             generic_sorter = require "telescope.sorters".get_generic_fuzzy_sorter,
             shorten_path = true,
             winblend = 0,
-            width = 0.75,
-            preview_cutoff = 120,
-            results_height = 1,
-            results_width = 0.8,
+            -- ZZH DEL Begin
+            -- width = 0.75,
+            -- preview_cutoff = 120,
+            -- results_height = 1,
+            -- results_width = 0.8,
+            -- ZZH DEL End
             border = {},
             borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
             color_devicons = true,

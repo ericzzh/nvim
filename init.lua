@@ -28,4 +28,3 @@ vim.api.nvim_exec(
 ]],
     false
 )
- 

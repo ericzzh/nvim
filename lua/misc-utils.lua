@@ -49,6 +49,8 @@ vim.cmd('set noswapfile')
 vim.o.hidden = true --  don't let changed buffer disturb
 vim.o.showtabline = 2 
 vim.o.foldmethod='marker'
+vim.o.title = true -- set the title of window to the value of the titlestring
+vim.o.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
 -- ZZH Add End
 
 local M = {}

@@ -166,8 +166,8 @@ return packer.startup(
         }
 
         use {
-            "kdav5758/TrueZen.nvim",
-            cmd = {"TZAtaraxis", "TZMinimalist"},
+            "Pocco81/TrueZen.nvim",
+            cmd = {"TZAtaraxis", "TZMinimalist", "TZFocus"},
             config = function()
                 require("zenmode").config()
             end
@@ -188,6 +188,7 @@ return packer.startup(
         -- Debugging
         use {
           "mfussenegger/nvim-dap",
+          event = "BufRead",
           config=function()
             require"dap_setting"
           end
@@ -195,6 +196,7 @@ return packer.startup(
 
         use {
           "Pocco81/DAPInstall.nvim",
+          cmd = {"DIInstall","DIUninstall","DIList"},
           config=function()
               local dap_install = require("dap-install")
 
@@ -203,8 +205,15 @@ return packer.startup(
                  verbosely_call_debuggers = false,
               })
           end
-        -- ZZH ADD End
         }
+
+        use {
+          "jbyuki/one-small-step-for-vimkind",
+          event = "BufRead",
+          --cmd = {"lua require'osv'.launch()"}
+        }
+
+        -- ZZH ADD End
     end,
     {
         display = {
