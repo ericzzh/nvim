@@ -107,7 +107,7 @@ map("n", "<Leader>nt", ":NvimTreeToggle<CR>", opt) --ZZH ADD
 map("n", "<Leader>fm", [[<Cmd> Neoformat<CR>]], opt)
 
 -- dashboard stuff
-map("n", "<Leader>fw", [[<Cmd> Telescope live_grep<CR>]], opt)
+-- map("n", "<Leader>fw", [[<Cmd> Telescope live_grep<CR>]], opt) --zzh del
 map("n", "<Leader>db", [[<Cmd> Dashboard<CR>]], opt)
 map("n", "<Leader>fn", [[<Cmd> DashboardNewFile<CR>]], opt)
 map("n", "<Leader>bm", [[<Cmd> DashboardJumpMarks<CR>]], opt)
@@ -122,6 +122,7 @@ map("n", "<Leader>fp", [[<Cmd>lua require('telescope').extensions.media_files.me
 map("n", "<Leader>fb", [[<Cmd>Telescope Buffers<CR>]], opt)
 map("n", "<Leader>fh", [[<Cmd>Telescope help_tags<CR>]], opt)
 map("n", "<Leader>fo", [[<Cmd>Telescope oldfiles<CR>]], opt)
+map("n", "<Leader>fw", [[<Cmd> Telescope live_grep<CR>]], opt)
 
 -- bufferline tab stuff
 map("n", "<S-t>", ":tabnew<CR>", opt) -- new tab
