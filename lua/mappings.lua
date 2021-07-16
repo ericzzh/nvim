@@ -76,7 +76,7 @@ _G.s_tab_complete = function()
     if vim.fn.pumvisible() == 1 then
         return t "<C-p>"
     elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
-        return t "<Plug>(vsnip-jump-prev)"
+        return t "<Plug>(vnip-jump-prev)"
     else
         return t "<S-Tab>"
     end
@@ -156,4 +156,9 @@ map('n', '<leader>B', ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint
 map('n', '<leader>lp', ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",opt)
 map('n', '<leader>dr', ":lua require'dap'.repl.open()<CR>",opt)
 map('n', '<leader>dl', ":lua require'dap'.run_last()<CR>",opt)
+
+
+-- luasnip
+-- map("i", "<C-,>", "<cmd> require('luasnip').jump(1)<Cr>", {expr = true})
+-- map("i", "<C-.>", "<cmd> require('luasnip').jump(-1)<Cr>", {expr = true})
 -- ZZh Add end
