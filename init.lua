@@ -12,7 +12,7 @@ g.auto_save = 0
 
 g.nvchad_theme = "onedark"
 local base16 = require "base16"
-base16(base16.themes["onedark"], true)
+base16(base16.themes("onedark"), true)
 
 require "highlights"
 require "mappings"
