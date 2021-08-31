@@ -157,13 +157,13 @@ return packer.startup(
         }
 
         -- smooth scroll
-        use {
-            "karb94/neoscroll.nvim",
-            event = "WinScrolled",
-            config = function()
-                require("neoscroll").setup()
-            end
-        }
+        -- use {
+        --     "karb94/neoscroll.nvim",
+        --     event = "WinScrolled",
+        --     config = function()
+        --         require("neoscroll").setup()
+        --     end
+        -- }
 
         use {
             "Pocco81/TrueZen.nvim",
