@@ -35,7 +35,6 @@ vim.g.loaded_matchit = 0
 vim.g.loaded_matchparen = 0
 vim.g.loaded_spec = 0
 
--- ZZH Add Begin
 vim.cmd('set iskeyword+=-') -- treat dash separated words as a word text object"
 vim.cmd('set shortmess+=c') -- Don't pass messages to |ins-completion-menu|.
 vim.cmd('set inccommand=split') -- Make substitution work in realtime
@@ -52,7 +51,6 @@ vim.o.foldmethod='marker'
 vim.o.title = true -- set the title of window to the value of the titlestring
 vim.o.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
 vim.cmd('lang en_US.UTF-8')
--- ZZH Add End
 
 local M = {}
 
@@ -75,7 +73,7 @@ M.blankline = function()
     vim.g.indentLine_enabled = 1
     vim.g.indent_blankline_char = "▏"
 
-    vim.g.indent_blankline_filetype_exclude = {"help", "terminal", "dashboard"}
+    vim.g.indent_blankline_filetype_exclude = {"help", "terminal"}
     vim.g.indent_blankline_buftype_exclude = {"terminal"}
 
     vim.g.indent_blankline_show_trailing_blankline_indent = false

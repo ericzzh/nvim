@@ -41,7 +41,7 @@ fg("IndentBlanklineChar", line)
 
 -- misc --
 fg("LineNr", grey)
-fg("Comment", light_grey) -- ZZH Change
+fg("Comment", light_grey)
 fg("NvimInternalError", red)
 fg("VertSplit", line)
 fg("EndOfBuffer", black)
@@ -132,12 +132,6 @@ fg_bg("BufferLineCLoseButtonVisible", light_grey, black2)
 fg_bg("BufferLineCLoseButton", light_grey, black2)
 fg_bg("BufferLineCLoseButtonSelected", red, black)
 
--- dashboard
-
-fg("DashboardHeader", grey_fg)
-fg("DashboardCenter", grey_fg)
-fg("DashboardShortcut", grey_fg)
-fg("DashboardFooter", grey_fg)
 
 -- Default nvim bg (based on terminal bg)
 -- cmd "hi Normal guibg=#1e222a"

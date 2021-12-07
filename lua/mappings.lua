@@ -19,15 +19,10 @@ map("v", "x", [=[ "_x ]=], opt)
 --
 
 -- OPEN TERMINALS --
--- ZZH Change begin
--- map("n", "<C-l>", [[<Cmd>vnew term://bash <CR>]], opt) -- term over right
--- map("n", "<C-x>", [[<Cmd> split term://bash | resize 10 <CR>]], opt) --  term bottom
--- map("n", "<C-t>t", [[<Cmd> tabnew | term <CR>]], opt) -- term newtab
 
 map("n", "<M-l>", [[<Cmd>vnew term://bash <CR>]], opt) -- term over right
 map("n", "<M-x>", [[<Cmd> split term://bash | resize 10 <CR>]], opt) --  term bottom
 map("n", "<M-t>t", [[<Cmd> tabnew | term <CR>]], opt) -- term newtab
--- ZZH Change end
 -- copy whole file content
 map("n", "<C-a>", [[ <Cmd> %y+<CR>]], opt)
 
@@ -39,13 +34,10 @@ map("n", "<leader>z", ":TZAtaraxis<CR>", opt)
 map("n", "<leader>m", ":TZMinimalist<CR>", opt)
 
 map("n", "<C-s>", ":w <CR>", opt)
--- vim.cmd("inoremap jh <Esc>")
 
 -- Commenter Keybinding
 map("n", "<leader>/", ":CommentToggle<CR>", opt)
 map("v", "<leader>/", ":CommentToggle<CR>", opt)
-
--- map("n", "<C-q>", ":bp<bar>sp<bar>bn<bar>bd! <CR>", opt) ZZH Move the <S-x>
 
 -- compe stuff
 
@@ -100,19 +92,10 @@ map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 map("i", "<CR>", "v:lua.completions()", {expr = true})
 
 -- nvimtree
--- map("n", "<C-n>", ":NvimTreeToggle<CR>", opt) --ZZH DEL
-map("n", "<Leader>nt", ":NvimTreeToggle<CR>", opt) --ZZH ADD
+map("n", "<Leader>nt", ":NvimTreeToggle<CR>", opt) 
 
 -- format code
 map("n", "<Leader>fm", [[<Cmd> Neoformat<CR>]], opt)
-
--- dashboard stuff
--- map("n", "<Leader>fw", [[<Cmd> Telescope live_grep<CR>]], opt) --zzh del
-map("n", "<Leader>db", [[<Cmd> Dashboard<CR>]], opt)
-map("n", "<Leader>fn", [[<Cmd> DashboardNewFile<CR>]], opt)
-map("n", "<Leader>bm", [[<Cmd> DashboardJumpMarks<CR>]], opt)
-map("n", "<C-s>l", [[<Cmd> SessionLoad<CR>]], opt)
-map("n", "<C-s>s", [[<Cmd> SessionSave<CR>]], opt)
 
 -- Telescope
 map("n", "<Leader>gt", [[<Cmd> Telescope git_status <CR>]], opt)
@@ -126,13 +109,12 @@ map("n", "<Leader>fw", [[<Cmd> Telescope live_grep<CR>]], opt)
 
 -- bufferline tab stuff
 map("n", "<S-t>", ":tabnew<CR>", opt) -- new tab
--- map("n", "<S-x>", ":bd!<CR>", opt) -- close tab
-map("n", "<S-x>", ":bp<bar>sp<bar>bn<bar>bd! <CR>", opt) -- ZZH Add 
+map("n", "<S-x>", ":bp<bar>sp<bar>bn<bar>bd! <CR>", opt) 
+
 -- move between tabs
 map("n", "<TAB>", [[<Cmd>BufferLineCycleNext<CR>]], opt)
 map("n", "<S-TAB>", [[<Cmd>BufferLineCyclePrev<CR>]], opt)
 
--- ZZH Add begin
 -- better window movement
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
@@ -158,7 +140,3 @@ map('n', '<leader>dr', ":lua require'dap'.repl.open()<CR>",opt)
 map('n', '<leader>dl', ":lua require'dap'.run_last()<CR>",opt)
 
 
--- luasnip
--- map("i", "<C-,>", "<cmd> require('luasnip').jump(1)<Cr>", {expr = true})
--- map("i", "<C-.>", "<cmd> require('luasnip').jump(-1)<Cr>", {expr = true})
--- ZZh Add end

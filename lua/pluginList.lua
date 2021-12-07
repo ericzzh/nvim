@@ -1,4 +1,3 @@
--- ZZH ADD Begin
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
@@ -6,7 +5,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
     execute "packadd packer.nvim"
 end
--- ZZH ADD End
 
 local packer = require("packer")
 local use = packer.use
@@ -47,8 +45,6 @@ return packer.startup(
             end
         }
 
-        use "kabouzeid/nvim-lspinstall"
-
         use {
             "onsails/lspkind-nvim",
             event = "BufRead",
@@ -83,9 +79,12 @@ return packer.startup(
         -- file managing , picker etc
         use {
             "kyazdani42/nvim-tree.lua",
-            cmd = "NvimTreeToggle",
-            config = function()
-                require("nvimTree").config()
+            config = function() 
+              require("nvim-tree").setup {
+                view = {
+                  auto_resize = true
+                }
+              } 
             end
         }
 
@@ -132,20 +131,6 @@ return packer.startup(
             end
         }
 
-        use {
-            "glepnir/dashboard-nvim",
-            cmd = {
-                "Dashboard",
-                "DashboardNewFile",
-                "DashboardJumpMarks",
-                "SessionLoad",
-                "SessionSave"
-            },
-            setup = function()
-                require("dashboard").config()
-            end
-        }
-
         use {"tweekmonster/startuptime.vim", cmd = "StartupTime"}
 
         -- load autosave only if its globally enabled
@@ -155,15 +140,6 @@ return packer.startup(
                 return vim.g.auto_save == 1
             end
         }
-
-        -- smooth scroll
-        -- use {
-        --     "karb94/neoscroll.nvim",
-        --     event = "WinScrolled",
-        --     config = function()
-        --         require("neoscroll").setup()
-        --     end
-        -- }
 
         use {
             "Pocco81/TrueZen.nvim",
@@ -184,36 +160,12 @@ return packer.startup(
             end
         }
 
-        -- ZZH ADD Begin
-        -- Debugging
-        use {
-          "mfussenegger/nvim-dap",
-          event = "BufRead",
-          config=function()
-            require"dap_setting"
-          end
-        }
-
-        use {
-          "Pocco81/DAPInstall.nvim",
-          cmd = {"DIInstall","DIUninstall","DIList"},
-          config=function()
-              local dap_install = require("dap-install")
-
-              dap_install.setup({
-      	         installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
-                 verbosely_call_debuggers = false,
-              })
-          end
-        }
-
         use {
           "jbyuki/one-small-step-for-vimkind",
           event = "BufRead",
           --cmd = {"lua require'osv'.launch()"}
         }
 
-        -- ZZH ADD End
     end,
     {
         display = {
