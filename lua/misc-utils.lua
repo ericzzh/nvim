@@ -51,6 +51,7 @@ vim.o.showtabline = 2
 vim.o.foldmethod='marker'
 vim.o.title = true -- set the title of window to the value of the titlestring
 vim.o.titlestring = "%<%F%=%l/%L - nvim" -- what the title of the window will be set to
+vim.cmd('lang en_US.UTF-8')
 -- ZZH Add End
 
 local M = {}
