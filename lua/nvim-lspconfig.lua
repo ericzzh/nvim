@@ -82,10 +82,10 @@ M.config = function()
     -- end
 
     -- replace the default lsp diagnostic letters with prettier symbols
-    vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "LspDiagnosticsDefaultError"})
-    vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "LspDiagnosticsDefaultWarning"})
-    vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "LspDiagnosticsDefaultInformation"})
-    vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "LspDiagnosticsDefaultHint"})
+    vim.fn.sign_define("LspDiagnosticsSignError", {text = "", numhl = "DiagnosticError"})
+    vim.fn.sign_define("LspDiagnosticsSignWarning", {text = "", numhl = "DiagnosticWarn"})
+    vim.fn.sign_define("LspDiagnosticsSignInformation", {text = "", numhl = "DiagnosticInfo"})
+    vim.fn.sign_define("LspDiagnosticsSignHint", {text = "", numhl = "DiagnosticHint"})
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

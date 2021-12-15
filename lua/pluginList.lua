@@ -54,26 +54,75 @@ return packer.startup(
         }
 
         -- load compe in insert mode only
+        -- use {
+        --     "hrsh7th/nvim-compe",
+        --     event = "InsertEnter",
+        --     config = function()
+        --         require("compe-completion").config()
+        --     end,
+        --     wants = {"LuaSnip"},
+        --     requires = {
+        --         {
+        --             "L3MON4D3/LuaSnip",
+        --             wants = "friendly-snippets",
+        --             event = "InsertCharPre",
+        --             config = function()
+        --                 require("compe-completion").snippets()
+        --             end
+        --         },
+        --         "rafamadriz/friendly-snippets"
+        --     }
+        -- }
+   -- load luasnips + cmp related in insert mode only
+
         use {
-            "hrsh7th/nvim-compe",
-            event = "InsertEnter",
-            config = function()
-                require("compe-completion").config()
-            end,
-            wants = {"LuaSnip"},
-            requires = {
-                {
-                    "L3MON4D3/LuaSnip",
-                    wants = "friendly-snippets",
-                    event = "InsertCharPre",
-                    config = function()
-                        require("compe-completion").snippets()
-                    end
-                },
-                "rafamadriz/friendly-snippets"
-            }
+           "rafamadriz/friendly-snippets",
+           event = "InsertEnter",
         }
 
+        use {
+           "hrsh7th/nvim-cmp",
+           after = "friendly-snippets",
+           config = function()
+               require"cmp"
+           end
+        }
+
+        use {
+           "L3MON4D3/LuaSnip",
+           wants = "friendly-snippets",
+           after = "nvim-cmp",
+           config = function()
+               require"set-luasnip"
+           end
+        }
+
+        use {
+           "saadparwaiz1/cmp_luasnip",
+           after = "LuaSnip",
+        }
+
+        use {
+           "hrsh7th/cmp-nvim-lua",
+           after = "cmp_luasnip",
+        }
+
+        use {
+           "hrsh7th/cmp-nvim-lsp",
+           after = "cmp-nvim-lua",
+        }
+
+        use {
+           "hrsh7th/cmp-buffer",
+           after = "cmp-nvim-lsp",
+        }
+
+        use {
+           "hrsh7th/cmp-path",
+           after = "cmp-buffer",
+        }
+
+        -- neoformat
         use {"sbdchd/neoformat", cmd = "Neoformat"}
 
         -- file managing , picker etc
